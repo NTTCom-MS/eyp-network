@@ -1,5 +1,9 @@
+#
+# puppet managed file
+#
+
 DEVICE="<%= @dev %>"
-ONBOOT="<% if @onboot %>yes<% else %>no<% end %>"
+ONBOOT="<%= scope.function_bool2httpd([@onboot]) %>"
 <% if @dhcp -%>
 BOOTPROTO=dhcp
 <% else -%>

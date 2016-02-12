@@ -1,0 +1,16 @@
+<% if @onboot -%>
+auto <%= @dev %>
+<% end -%>
+<% if @dhcp -%>
+iface <%= @dev %> inet dhcp
+<% else -%>
+iface <%= @dev %> inet static
+      address <%= @ip %>
+      netmask <%= @netmask %>
+      <%- if @gateway -%>
+      gateway <%= @gateway %>
+      <%- end -%>
+      <%- if defined?(@preup) -%>
+      pre-up <%= @preup %>
+      <%- end -%>
+<% end %>

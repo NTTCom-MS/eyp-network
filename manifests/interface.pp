@@ -6,6 +6,7 @@ define network::interface (
                             $dns=undef,
                             $onboot=true,
                             $dhcp=false,
+                            $preup=undef,
                             $network_managed=true,
                           ) {
   #
@@ -50,8 +51,29 @@ define network::interface (
     }
     'Debian':
     {
+      if ! defined(Concat['/etc/network/interfaces'])
+      {
+        concat { '/etc/network/interfaces':
+          ensure  => 'present',
+          mode    => '0644',
+          owner   => 'root',
+          group   => 'root',
+          notify  => $notify_exec,
+        }
 
+        concat::fragment{ "/etc/network/interfaces lo interface":
+          target  => '/etc/network/interfaces',
+          order   => '00',
+          content => "# puppet managed file\n\nauto lo\niface lo inet loopback\n\n",
+        }
+      }
+
+      concat::fragment{ "/etc/network/interfaces ${dev}":
+        target  => '/etc/network/interfaces',
+        order   => '55',
+        content => template("${module_name}/debian/interface.erb"),
+      }
     }
-    default: { fail('Operating system not supported')  }
+    default: { fail("OS family (${::osfamily}) not supported")  }
   }
 }
