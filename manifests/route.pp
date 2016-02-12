@@ -25,11 +25,11 @@ define network::route (
       if ! defined(Concat["/etc/sysconfig/network-scripts/route-${eth}"])
       {
         concat { "/etc/sysconfig/network-scripts/route-${eth}":
-          ensure  => $ensure,
-          mode    => '0644',
-          owner   => 'root',
-          group   => 'root',
-          notify  => $notify_exec,
+          ensure => $ensure,
+          mode   => '0644',
+          owner  => 'root',
+          group  => 'root',
+          notify => $notify_exec,
         }
 
         concat::fragment{ "route ${eth} header":
