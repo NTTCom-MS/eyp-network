@@ -61,7 +61,7 @@ define network::interface (
           notify => $notify_exec,
         }
 
-        concat::fragment{ "/etc/network/interfaces lo interface":
+        concat::fragment{ '/etc/network/interfaces lo interface':
           target  => '/etc/network/interfaces',
           order   => '00',
           content => "# puppet managed file\n\nauto lo\niface lo inet loopback\n\n",
