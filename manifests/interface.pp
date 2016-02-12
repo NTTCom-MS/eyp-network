@@ -54,11 +54,11 @@ define network::interface (
       if ! defined(Concat['/etc/network/interfaces'])
       {
         concat { '/etc/network/interfaces':
-          ensure  => 'present',
-          mode    => '0644',
-          owner   => 'root',
-          group   => 'root',
-          notify  => $notify_exec,
+          ensure => 'present',
+          mode   => '0644',
+          owner  => 'root',
+          group  => 'root',
+          notify => $notify_exec,
         }
 
         concat::fragment{ "/etc/network/interfaces lo interface":
