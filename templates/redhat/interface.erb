@@ -3,7 +3,7 @@
 #
 
 DEVICE="<%= @dev %>"
-ONBOOT="<%= scope.function_bool2httpd([@onboot]) %>"
+ONBOOT="<%= scope.function_bool2yesno([@onboot]) %>"
 <% if @dhcp -%>
 BOOTPROTO=dhcp
 <% else -%>
