@@ -11,7 +11,7 @@ define network::route (
 
   if($network_managed)
   {
-    $notify_exec=Exec['network restart']
+    $notify_exec=Class['network::service']
   }
   else
   {

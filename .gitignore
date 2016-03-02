@@ -4,3 +4,4 @@ pkg/
 junit
 log
 spec/fixtures/
+Gemfile.lock
