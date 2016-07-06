@@ -1,6 +1,6 @@
 # network
 
-**AtlasIT-AM/eyp-network**: [![Build Status](https://travis-ci.org/AtlasIT-AM/eyp-network.png?branch=master)](https://travis-ci.org/AtlasIT-AM/eyp-network)
+**NTTCom-MS/eyp-network**: [![Build Status](https://travis-ci.org/NTTCom-MS/eyp-network.png?branch=master)](https://travis-ci.org/NTTCom-MS/eyp-network)
 
 #### Table of Contents
 

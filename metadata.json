@@ -4,9 +4,9 @@
   "author": "eyp",
   "summary": "netkork configuration module",
   "license": "Apache-2.0",
-  "source": "https://github.com/AtlasIT-AM/eyp-network",
+  "source": "https://github.com/NTTCom-MS/eyp-network",
   "project_page": null,
-  "issues_url": "https://github.com/AtlasIT-AM/eyp-network/issues",
+  "issues_url": "https://github.com/NTTCom-MS/eyp-network/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
     {"version_requirement":">= 1.2.3","name":"puppetlabs/concat"}

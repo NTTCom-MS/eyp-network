@@ -9,9 +9,10 @@ class network::service(
   validate_bool($manage_service)
   validate_bool($enable)
 
-  if(getvar('::eyp_docker_iscontainer')==undef or
-      getvar('::eyp_docker_iscontainer')==false or
-      getvar('::eyp_docker_iscontainer') =~ /false/ or
+  $is_docker_container_var=getvar('::eyp_docker_iscontainer')
+  $is_docker_container=str2bool($is_docker_container_var)
+
+  if( $is_docker_container==false or
       $manage_docker_service)
   {
     exec { 'network restart' :

@@ -7,9 +7,9 @@ EOS
 
   arg = args[0]
 
-  if arg.nil? or arg == false or arg =~ /false/i or arg == :undef
+  if arg.nil? or arg == false or arg =~ /false/i or arg =~ /no/i or arg == :undef
     return 'no'
-  elsif arg == true or arg =~ /true/i
+  elsif arg == true or arg =~ /true/i or arg =~ /yes/i
     return 'yes'
   end
 
