@@ -7,8 +7,21 @@ ONBOOT="<%= scope.function_bool2yesno([@onboot]) %>"
 <% if @dhcp -%>
 BOOTPROTO=dhcp
 <% else -%>
+<% if defined?(@type) -%>
+TYPE="<%= @type %>"
+<% else -%>
 IPADDR=<%= @ip %>
 NETMASK=<%= @netmask %>
+<% end -%>
+<% if defined?(@peer_outer_ipaddr) -%>
+PEER_OUTER_IPADDR=<%= @peer_outer_ipaddr %>
+<% end -%>
+<% if defined?(@peer_inner_ipaddr) -%>
+PEER_INNER_IPADDR=<%= @peer_inner_ipaddr %>
+<% end -%>
+<% if defined?(@my_inner_ipaddr) -%>
+MY_INNER_IPADDR=<%= @my_inner_ipaddr %>
+<% end -%>
 <% if defined?(@gateway) %>GATEWAY=<%= @gateway %><% end %>
 <%- if defined?(@dns) -%>
 <%- @dnsto_enum.each_with_index do |v, i| -%>

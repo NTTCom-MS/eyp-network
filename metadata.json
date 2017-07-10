@@ -1,14 +1,46 @@
 {
   "name": "eyp-network",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "author": "eyp",
   "summary": "netkork configuration module",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-network",
-  "project_page": null,
+  "project_page": "https://github.com/NTTCom-MS/eyp-network",
   "issues_url": "https://github.com/NTTCom-MS/eyp-network/issues",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
-    {"version_requirement":">= 1.2.3","name":"puppetlabs/concat"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
+    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "OEL",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "14.04", "16.04" ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.0"
+    }
   ]
 }

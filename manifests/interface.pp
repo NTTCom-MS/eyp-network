@@ -1,13 +1,18 @@
 define network::interface (
-                            $dev=$name,
-                            $ip=undef,
-                            $netmask=undef,
-                            $gateway=undef,
-                            $dns=undef,
-                            $onboot=true,
-                            $dhcp=false,
-                            $preup=undef,
-                            $network_managed=true,
+                            $dev               = $name,
+                            $ip                = undef,
+                            $netmask           = undef,
+                            $gateway           = undef,
+                            $dns               = undef,
+                            $onboot            = true,
+                            $dhcp              = false,
+                            $preup             = undef,
+                            $network_managed   = true,
+                            $type              = undef,
+                            $peer_outer_ipaddr = undef,
+                            $peer_inner_ipaddr = undef,
+                            $my_inner_ipaddr   = undef,
+                            $my_outer_ipaddr   = undef,
                           ) {
   #
   include ::network
@@ -18,6 +23,10 @@ define network::interface (
     {
       fail('Inconsistent configuration')
     }
+  }
+  elsif($type == 'gre')
+  {
+    # TODO: perform some checks
   }
   else
   {

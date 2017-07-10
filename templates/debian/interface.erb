@@ -1,6 +1,15 @@
 <% if @onboot -%>
 auto <%= @dev %>
 <% end -%>
+<% if @type == "gre" -%>
+iface <%= @dev %> inet static
+        address <%= @my_inner_ipaddr %>
+        netmask 255.255.255.252
+        up ifconfig <%= @dev %> multicast
+        pre-up iptunnel add <%= @dev %> mode gre remote <%= @peer_outer_ipaddr %> local <%= @my_outer_ipaddr %> ttl 255
+        pointopoint <%= @peer_inner_ipaddr %>
+        post-down iptunnel del <%= @dev %>
+<% else -%>
 <% if @dhcp -%>
 iface <%= @dev %> inet dhcp
 <% else -%>
@@ -14,3 +23,4 @@ iface <%= @dev %> inet static
       pre-up <%= @preup %>
       <%- end -%>
 <% end %>
+<% end -%>
