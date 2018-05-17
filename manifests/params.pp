@@ -9,6 +9,7 @@ class network::params {
       {
         /^[5-7].*$/:
         {
+          $use_netplan=false
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -22,8 +23,13 @@ class network::params {
         {
           case $::operatingsystemrelease
           {
-            /^14.*$/:
+            /^1[46].*$/:
             {
+              $use_netplan=false
+            }
+            /^18.*$/:
+            {
+              $use_netplan=true
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }

@@ -24,7 +24,7 @@ MY_INNER_IPADDR=<%= @my_inner_ipaddr %>
 <% end -%>
 <% if defined?(@gateway) %>GATEWAY=<%= @gateway %><% end %>
 <%- if defined?(@dns) -%>
-<%- @dnsto_enum.each_with_index do |v, i| -%>
+<%- @dns.to_enum.each_with_index do |v, i| -%>
 DNS<%= i %>=<%= v %>
 <%- end -%>
 <% end -%>

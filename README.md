@@ -65,6 +65,28 @@ network::route { '1.2.3.0/24':
 }
 ```
 
+For **Ubuntu 18.04** it uses *eyp-netplan* to configure the network, for example:
+
+```puppet
+network::interface { 'enp0s9':
+  ip      => '77.77.77.77',
+  netmask => '255.255.255.252',
+}
+```
+
+Will be translated to:
+
+```yaml
+---
+# puppet managed file
+network:
+  version: 2
+  ethernets:
+    enp0s9:
+      dhcp4: false
+      addresses: [77.77.77.77/30]
+```
+
 ## Usage
 
 Put the classes, types, and resources for customizing, configuring, and doing

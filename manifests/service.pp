@@ -1,8 +1,8 @@
 class network::service(
-                        $manage_service=true,
-                        $manage_docker_service=false,
-                        $ensure ='running',
-                        $enable =true,
+                        $manage_service        = true,
+                        $manage_docker_service = false,
+                        $ensure                = 'running',
+                        $enable                = true,
                       ) inherits network::params {
 
   validate_bool($manage_docker_service)

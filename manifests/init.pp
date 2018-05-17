@@ -2,6 +2,14 @@
 #
 class network inherits network::params {
 
-  include ::network::service
+  if($network::params::use_netplan)
+  {
+    include ::netplan
+  }
+  else
+  {
+    include ::network::service
+  }
+
 
 }

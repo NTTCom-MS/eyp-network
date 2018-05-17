@@ -1,10 +1,10 @@
 define network::route (
                         $eth,
                         $gw,
-                        $network=$name,
-                        $ensure = 'present',
-                        $order='01',
-                        $network_managed=true,
+                        $network         = $name,
+                        $ensure          = 'present',
+                        $order           = '01',
+                        $network_managed = true,
                       ) {
 
   include ::network
