@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.17
+
+Added RHEL 8 support
+
 ## 0.1.16
 
 * added suppport for Ubuntu 16.04

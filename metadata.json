@@ -1,6 +1,6 @@
 {
   "name": "eyp-network",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "author": "eyp",
   "summary": "netkork configuration module",
   "license": "Apache-2.0",
@@ -16,7 +16,7 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "CentOS",

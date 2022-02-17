@@ -7,7 +7,7 @@ class network::params {
       $service_restart_exec='service network restart'
       case $::operatingsystemrelease
       {
-        /^[5-7].*$/:
+        /^[5-8].*$/:
         {
           $use_netplan=false
         }
